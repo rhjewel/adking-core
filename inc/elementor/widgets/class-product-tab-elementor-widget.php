@@ -135,6 +135,17 @@ class Adking_Product_Tab_Widget extends Widget_Base
             ]
         );
 
+        $this->add_control(
+            'adking_product_tab_ads_img',
+            [
+                'label' => esc_html__('Ads Image', 'textdomain'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
 
@@ -885,6 +896,11 @@ class Adking_Product_Tab_Widget extends Widget_Base
                                 </button>
                             <?php endforeach; ?>
                         </div>
+                        <?php if (!empty($settings['adking_product_tab_ads_img']['url'])) : ?>
+                            <div class="offer-img hover-img">
+                                <img src="<?php echo $settings['adking_product_tab_ads_img']['url'] ?>" alt="">
+                            </div>
+                        <?php endif; ?>
                     </div>
 
                     <div class="col-lg-9">

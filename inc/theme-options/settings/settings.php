@@ -33,10 +33,10 @@ $includes_files = array(
         'folder-name' => EGNS_CORE_INC . '/theme-options/settings/blog'
     ),
     // Project Settings
-    array(
-        'file-name' => 'custom_post',
-        'folder-name' => EGNS_CORE_INC . '/theme-options/settings/custom_post'
-    ),
+    // array(
+    //     'file-name' => 'custom_post',
+    //     'folder-name' => EGNS_CORE_INC . '/theme-options/settings/custom_post'
+    // ),
     // 404 Page Settings
     array(
         'file-name' => 'page',

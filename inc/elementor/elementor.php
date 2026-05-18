@@ -16,13 +16,11 @@ if (!class_exists('Egns_Elementor')) {
 
 	class Egns_Elementor
 	{
-
 		/*
 		* $instance
 		* @since 1.0.0
 		* */
 		private static ?self $instance = null;
-
 
 
 		/*
@@ -37,9 +35,14 @@ if (!class_exists('Egns_Elementor')) {
 			//elementor widget registered
 			add_action('elementor/widgets/register', array($this, '_widget_registered'));
 
+			// Enqueue stylesheets in editor page and frontend
+			add_action('elementor/editor/before_enqueue_styles', array($this, 'adking_enqueue_style'));
+			add_action('elementor/frontend/before_enqueue_styles', array($this, 'adking_enqueue_style'));
+
 			//add custom icons to elementor new controls
 			add_filter('elementor/icons_manager/additional_tabs', array($this, 'add_custom_icon_to_elementor_icons'));
 		}
+
 		/*
 	   * getInstance()
 	   * @since 1.0.0
@@ -98,6 +101,8 @@ if (!class_exists('Egns_Elementor')) {
 				'product',
 				'product-tab',
 				'product-slider',
+				'ads-service',
+				'banner',
 			);
 
 			$elementor_widgets = apply_filters('adking_widgets', $elementor_widgets);

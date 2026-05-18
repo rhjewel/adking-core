@@ -84,23 +84,12 @@ add_action('csf_loaded', function () {
             'file-name'   => 'page-settings',
             'folder-name' => EGNS_CORE_INC . '/theme-options/page-options/'
         ),
-
-        // Career 
+        // product 
         array(
-            'file-name'   => 'career',
-            'folder-name' => EGNS_CORE_INC . '/theme-options/career/'
+            'file-name'   => 'product',
+            'folder-name' => EGNS_CORE_INC . '/theme-options/product/'
         ),
 
-        // people 
-        array(
-            'file-name'   => 'people',
-            'folder-name' => EGNS_CORE_INC . '/theme-options/people/'
-        ),
-        // Case Study 
-        array(
-            'file-name'   => 'case-study',
-            'folder-name' => EGNS_CORE_INC . '/theme-options/case-study/'
-        ),
 
     );
 
