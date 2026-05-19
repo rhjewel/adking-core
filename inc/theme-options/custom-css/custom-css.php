@@ -113,21 +113,9 @@ function egnsCustomStyling()
     $breadcump_background_image      = $egns_theme_options['breadcrumb_bg_image']['url'] ?? '';
     $breadcump_page_background_image = $egns_page_options['breadcrumb_page_bg_image']['url'] ?? '';
 
-    $meta = get_post_meta(get_the_ID(), 'EGNS_PEOPLE_META_ID', true);
-    $secondary_thumbnail = $meta['secondary_thumbnail']['url'] ?? '';
-
     $breadcrumb_bg_url = '';
 
-    // Priority 1: Single post thumbnail
-    if (is_singular('post') && has_post_thumbnail()) {
-        $breadcrumb_bg_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-    }
-    // Priority 2: Single people post thumbnail
-    elseif (is_singular('people')) {
-        $breadcrumb_bg_url = $secondary_thumbnail;
-    }
-    // Priority 3: Page breadcrumb image
-    elseif (!empty($breadcump_page_background_image)) {
+    if (!empty($breadcump_page_background_image)) {
         $breadcrumb_bg_url = $breadcump_page_background_image;
     }
     // Priority 4: Default breadcrumb image
@@ -138,7 +126,7 @@ function egnsCustomStyling()
     if (!empty($breadcrumb_bg_url)) {
         $custom_css .= "
         .breadcrumb-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" . esc_url($breadcrumb_bg_url) . "') !important;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('" . esc_url($breadcrumb_bg_url) . "') !important;
         }
     ";
     }

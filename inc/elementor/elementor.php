@@ -103,6 +103,9 @@ if (!class_exists('Egns_Elementor')) {
 				'product-slider',
 				'ads-service',
 				'banner',
+				'contact',
+				'feature-banner',
+				'gallery',
 			);
 
 			$elementor_widgets = apply_filters('adking_widgets', $elementor_widgets);
