@@ -106,6 +106,8 @@ if (!class_exists('Egns_Elementor')) {
 				'contact',
 				'feature-banner',
 				'gallery',
+				'partner',
+				'banner-card',
 			);
 
 			$elementor_widgets = apply_filters('adking_widgets', $elementor_widgets);
