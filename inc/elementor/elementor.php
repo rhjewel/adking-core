@@ -108,6 +108,7 @@ if (!class_exists('Egns_Elementor')) {
 				'gallery',
 				'partner',
 				'banner-card',
+				'hero-slider',
 			);
 
 			$elementor_widgets = apply_filters('adking_widgets', $elementor_widgets);

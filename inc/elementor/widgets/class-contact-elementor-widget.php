@@ -1190,7 +1190,7 @@ class Adking_Contact_Widget extends Widget_Base
     ?>
         <div class="contact-page">
             <div class="<?php echo esc_attr($container_class); ?>">
-                <div class="row g-4 mb-100">
+                <div class="row g-4">
                     <?php if (($settings['adking_contact_show_info'] ?? 'yes') === 'yes') : ?>
                         <div class="col-lg-5">
                             <?php if (!empty($settings['adking_contact_info_title'])) : ?>

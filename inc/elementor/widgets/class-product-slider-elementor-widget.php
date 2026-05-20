@@ -864,7 +864,7 @@ class Adking_Product_Slider_Widget extends Widget_Base
         ];
 ?>
         <div
-            class="adking-product-slider-widget newest-product-section mb-110"
+            class="adking-product-slider-widget newest-product-section"
             id="<?php echo esc_attr($widget_id); ?>"
             data-slides-desktop="<?php echo esc_attr($slider_config['desktop']); ?>"
             data-slides-tablet="<?php echo esc_attr($slider_config['tablet']); ?>"
@@ -961,7 +961,29 @@ class Adking_Product_Slider_Widget extends Widget_Base
             <div class="product-card-content">
                 <h6><a href="<?php echo esc_url($product_permalink); ?>" class="hover-underline"><?php echo esc_html($product_title); ?></a></h6>
                 <?php if (!empty($settings['adking_product_slider_show_category']) && 'yes' === $settings['adking_product_slider_show_category']) : ?>
-                    <?php $categories = wc_get_product_category_list($product_id, ', '); ?>
+                    <?php
+                    $terms = get_the_terms($product_id, 'product_cat');
+
+                    $categories = '';
+
+                    if (!empty($terms) && !is_wp_error($terms)) {
+
+                        // Limit categories to 3
+                        $terms = array_slice($terms, 0, 3);
+
+                        $category_links = [];
+
+                        foreach ($terms as $term) {
+                            $category_links[] = sprintf(
+                                '<a href="%s">%s</a>',
+                                esc_url(get_term_link($term)),
+                                esc_html($term->name)
+                            );
+                        }
+
+                        $categories = implode(', ', $category_links);
+                    }
+                    ?>
                     <?php if (!empty($categories)) : ?>
                         <p><?php echo wp_kses_post($categories); ?></p>
                     <?php endif; ?>

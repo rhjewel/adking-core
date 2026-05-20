@@ -9,6 +9,5 @@ CSF::createSection($prefix, array(
   'icon'  => 'fa fa-file-alt'
 ));
 
-require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/career.php';
-// require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/people.php';
+require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/product.php';
 require_once EGNS_CORE_INC . '/theme-options/settings/custom_post/case-study.php';

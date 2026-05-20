@@ -12,7 +12,7 @@ CSF::createSection($prefix, array(
     // A Subheading
     array(
       'type'    => 'subheading',
-      'content' => esc_html__('Product Details Quote', 'adking-core'),
+      'content' => esc_html__('Product Details', 'adking-core'),
     ),
     array(
       'id'         => 'product_quote_title',
@@ -39,8 +39,11 @@ CSF::createSection($prefix, array(
         'target' => '_blank'
       ),
     ),
-
-
+    // A Subheading
+    array(
+      'type'    => 'subheading',
+      'content' => esc_html__('Product Archive', 'adking-core'),
+    ),
     array(
       'id'         => 'breadcrumb_cpt_creer_heading',
       'type'       => 'text',

@@ -723,7 +723,7 @@ class Adking_Blog_Widget extends Widget_Base
         $left_posts = array_slice($posts, 0, 2);
         $right_posts = array_slice($posts, 2);
 ?>
-        <div class="blog-section mb-110 adking-blog-widget">
+        <div class="blog-section adking-blog-widget">
             <div class="container">
                 <?php if (!empty($settings['adking_blog_show_header']) && 'yes' === $settings['adking_blog_show_header'] && !empty($settings['adking_blog_title'])) : ?>
                     <div class="section-title style-2 text-center">

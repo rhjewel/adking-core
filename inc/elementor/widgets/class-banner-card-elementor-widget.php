@@ -755,7 +755,7 @@ class Adking_Banner_Card_Widget extends Widget_Base
             ? $settings['adking_banner_card_items']
             : $this->get_default_items();
     ?>
-        <div class="best-selling-section mb-110">
+        <div class="best-selling-section">
             <div class="container">
                 <?php foreach ($items as $item) : ?>
                     <?php if (!empty($item['adking_banner_card_item_top_gap']) && 'yes' === $item['adking_banner_card_item_top_gap']) : ?>
